@@ -15,10 +15,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20' # Changed from '18' to '20'
+          node-version: '20'
 
       - name: Install Wrangler
         run: npm install -g wrangler
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
       - name: Deploy Worker
         run: wrangler deploy --type container
