@@ -1,2 +1,5 @@
 name = "my-apache-guacamole-worker"
-compatibility_date = "2024-01-01"
+compatibility_date = "2024-08-14"
+
+[env.production.container]
+image = "" # You can leave this blank, as the action will build from your Dockerfile
