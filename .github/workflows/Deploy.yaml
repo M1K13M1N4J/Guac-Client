@@ -3,7 +3,7 @@ name: Deploy to Cloudflare Workers
 on:
   push:
     branches:
-      - main # This workflow will run on every push to the 'main' branch
+      - main
 
 jobs:
   deploy:
@@ -17,5 +17,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # If your worker is not in the root directory, you can specify the working-directory:
-          # working-directory: './path/to/your-worker'
+          type: "container" # This line is the fix
